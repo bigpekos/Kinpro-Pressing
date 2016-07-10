@@ -17,6 +17,7 @@ namespace KinproService
             _KinproPressingEntitie = new KinproPressingEntities();      
         }
 
+
         public List<GetAllClients_Result> GetAllClient()
         {
             ObjectResult<GetAllClients_Result> client = _KinproPressingEntitie.GetAllClients();
