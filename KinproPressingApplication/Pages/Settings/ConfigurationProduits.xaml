@@ -1,0 +1,75 @@
+﻿<UserControl x:Class="KinproPressingApplication.Pages.Settings.ConfigurationProduits"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <!--All products display-->
+        <Grid>
+            <DataGrid CellEditEnding="SaveAfterCellEdit_Event"  Height="690" Width="850" AutoGenerateColumns="False" ItemsSource="{Binding Product}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn x:Name="ProductName_Col" Binding="{Binding Name}" Header="Nom du produit"/>
+                    <DataGridTextColumn x:Name="ProductPrice_Col"  Binding="{Binding Price}" Header="Prix"  />
+                    <DataGridComboBoxColumn x:Name="Product_Images" ItemsSource="{Binding ElementName=ProductImageUrl, Mode=TwoWay,Path=Product.ProductImageUrl}"  Header="Image"/>
+
+                    <DataGridTemplateColumn Header="Supprimer" Width="105">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Supprimer" Tag="{Binding ItemId}" Click="OnProductDelete"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    
+                </DataGrid.Columns>
+               
+            </DataGrid>
+           
+        </Grid>
+
+
+            <WrapPanel Orientation="Vertical" Background="AliceBlue" Width="600" Height="160" Visibility="Hidden">
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,6" Background="Black">
+                <Label Content="Ajouter un produit" FontWeight="Bold" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100" />
+                        <ColumnDefinition Width="auto" />
+
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height = "auto" />
+                        <RowDefinition Height = "25"  />
+                        <RowDefinition Height = "25" />
+                        <RowDefinition Height = "25" />
+
+                    </Grid.RowDefinitions>
+
+                    <Label x:Name="NameOfProduct_Label" Content="Nom du produit:" Background="AliceBlue" Grid.Column="0" Grid.Row="1" />
+                    <TextBox Text="" x:Name="ProductName_TextBox" Width="200" Height="20" Grid.Column="1" Grid.Row="1" />
+
+                    <Label x:Name="Prix_Label" Content="Prix:"  Grid.Column="0" Grid.Row="2" />
+                    <TextBox Text="" x:Name="Prix_TextBox" Width="200" Height="20" Grid.Column="1" Grid.Row="2" />
+
+                    <Label x:Name="ProductImage_Label" Content="Image:" Background="AliceBlue" Grid.Column="0" Grid.Row="3" />
+                    <ListBox x:Name="ProductImage_TextBox" Width="200" Height="20" Grid.Column="1" Grid.Row="3" ItemsSource="{Binding }" ></ListBox>
+
+                </Grid>
+            </StackPanel>
+            <StackPanel>
+                <Button x:Name="AddProduct_btn" Content="Ajouter" Width="200" Margin="0,7,0,0" />
+            </StackPanel>         
+        </WrapPanel>
+        
+        <StackPanel Orientation="Horizontal">
+        <ListView x:Name="ProductList"></ListView>
+        </StackPanel>
+        
+    
+
+    </Grid>
+</UserControl>

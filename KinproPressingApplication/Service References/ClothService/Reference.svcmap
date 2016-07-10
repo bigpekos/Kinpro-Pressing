@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b3b7238e-32cc-437e-aed1-2cd56f878f7f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/KinproService/ClothService/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="e5c109e7-61fe-43f1-be9d-47b40919266d" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/KinproService/ClothService/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="bbe7b9d2-f68a-446e-8f4a-7c027f53d444" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/KinproService/ClothService/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="754163fb-c035-4f20-9f0c-b84db66f5002" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/KinproService/ClothService/mex" />
+    <MetadataFile FileName="KinproService.xsd" MetadataType="Schema" ID="275cde02-c316-452b-a4df-8d357ce17372" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/KinproService/ClothService/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

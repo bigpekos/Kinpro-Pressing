@@ -1,0 +1,82 @@
+﻿<UserControl x:Class="KinproPressingApplication.Pages.Home"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="656">
+    
+    <Grid Style="{StaticResource ContentRoot}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="15*"/>
+            <ColumnDefinition Width="4"/>
+            <ColumnDefinition Width="350"/>
+        </Grid.ColumnDefinitions>
+
+        <ScrollViewer Margin="4,0,0,0" Grid.ColumnSpan="3">
+            <StackPanel>
+                
+                
+                <TextBlock Text="Cordonnée du client" Style="{StaticResource Heading2}" />
+                <Grid HorizontalAlignment="Left" Width="586">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                   
+                        <TextBox x:Name="TelephoneRecherche" VerticalAlignment="Center" Width="150" Text="{Binding Product}" Margin="63,3,-31,1"  />
+                    <Button x:Name="RechercheClient" Content="Recherche Client" Margin="226,0,-226,0" Click="RechercheClient_Click" />
+                    <Label Content="Nom:" Target="{Binding ElementName=Telephone}" Margin="0,39,125,-39"/>
+                    <TextBox x:Name="clientName" VerticalAlignment="Center" Width="150" Text="{Binding FirstName, Mode=TwoWay, ValidatesOnDataErrors=True}" Margin="68,37,-32,-33" />
+                   
+                    <Label  Content="Telephone:" Target="{Binding ElementName=Nome}" Margin="227,41,-115,-37" />
+                    <TextBox x:Name="Telephone" VerticalAlignment="Center" Width="150" Text="{Binding FirstName, Mode=TwoWay, ValidatesOnDataErrors=True}" Margin="295,37,-263,-33" HorizontalAlignment="Left" />
+                    
+                    
+                    <Label Content="Telephone" HorizontalAlignment="Left" Margin="0,9,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Addresse:" Target="{Binding ElementName=Addresse}" Margin="454,40,-334,-38" />
+
+                    <TextBox x:Name="Addresse" VerticalAlignment="Center" Width="150" Text="{Binding FirstName, Mode=TwoWay, ValidatesOnDataErrors=True}" Margin="515,37,-483,-33" />
+
+
+                </Grid>
+
+                <ListBox x:Name="listboxofproduct" ItemsSource="{Binding Product, Mode=OneWay}"
+                         SelectedItem="{Binding SelectedAccentColor, Mode=TwoWay}"
+                         Margin="0,0,0,16" >
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel MaxWidth="{Binding ActualWidth, ElementName=Panel}" />
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <!--<Rectangle Width="40" Height="40" Margin="2" >
+                                <Rectangle.Fill>
+                                    <SolidColorBrush x:Name="Brush" Color="Red" />
+                                </Rectangle.Fill>
+                            </Rectangle>-->
+                            <StackPanel>
+                                <TextBox  Text="{Binding Name}"></TextBox>
+                                <TextBox  Text="{Binding Price}" ></TextBox>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+
+
+                <!--<TextBlock Text="Les Dépots" Style="{StaticResource Heading2}" Height="23" />-->
+            </StackPanel>
+        </ScrollViewer>
+        <GridSplitter Grid.Column="2"  />
+        <ScrollViewer Grid.Column="3" Margin="12,0,288,0">
+            <StackPanel>
+                <TextBlock Text="" Style="{StaticResource Heading2}" />
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>
+

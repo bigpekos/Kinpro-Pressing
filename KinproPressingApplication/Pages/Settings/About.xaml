@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="KinproPressingApplication.Pages.Settings.About"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <ScrollViewer>
+            <StackPanel MinWidth="200">
+                <TextBlock Text="A propos du logiciel" Style="{StaticResource Heading2}" />
+                <TextBlock Text="Kinpro-Pressing Application est un logiciel créer par Kinouani Matsy Eude Prosper, fils de Kinouani Prosper Patron du l'entreprise KinproRosco Group. Ce logiciel a été crée pour aider avec la bonne gérance du pressing kinpro-pressing." Margin="0,0,0,8" TextWrapping="Wrap" />
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>
